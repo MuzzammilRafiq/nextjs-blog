@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
-export default function Home() {
+export default ({ categories }) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -19,53 +19,23 @@ export default function Home() {
         </nav>
       </header>
       <main className={styles.main}>
-        <a href="">
-          <img src="" alt="" />
-          <h2>Events in 1</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa,
-            quidem. Eius deleniti delectus, exercitationem doloribus odit, ab
-            minus ullam asperiores odio consectetur vel reiciendis maiores in
-            numquam veritatis blanditiis! Officiis nobis iste nemo eum
-            voluptatum distinctio qui, repellendus error itaque.
-          </p>
-        </a>
-        <a href="">
-          <img src="" alt="" />
-          <h2>Events in 2</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa,
-            quidem. Eius deleniti delectus, exercitationem doloribus odit, ab
-            minus ullam asperiores odio consectetur vel reiciendis maiores in
-            numquam veritatis blanditiis! Officiis nobis iste nemo eum
-            voluptatum distinctio qui, repellendus error itaque.
-          </p>
-        </a>
-        <a href="">
-          <img src="" alt="" />
-          <h2>Events in 3</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa,
-            quidem. Eius deleniti delectus, exercitationem doloribus odit, ab
-            minus ullam asperiores odio consectetur vel reiciendis maiores in
-            numquam veritatis blanditiis! Officiis nobis iste nemo eum
-            voluptatum distinctio qui, repellendus error itaque.
-          </p>
-        </a>
+        {categories.map((category) => (
+          <a href={`/events/${category.id}`} key={category.id}>
+            <Image src={category.image} width={200} height={150} />
+            <h2>{category.title}</h2>
+            <p>{category.description}</p>
+          </a>
+        ))}
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </div>
   );
-}
+};
+
+export const getServerSideProps = async () => {
+  const data = await import("../data/data.json");
+  return {
+    props: {
+      categories: data.events_categories,
+    },
+  };
+};
