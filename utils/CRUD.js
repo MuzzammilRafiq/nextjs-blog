@@ -61,7 +61,6 @@ export const FETCH_BY_QUERY_ATTRIBUTES = async (req, res, next, props) => {
 };
 export const FETCH_BY_ATTRIBUTE = async (req, res, next, props) => {
   const { Collection, Attribute, Label, AttributeName } = props;
-  console.log(props);
   try {
     const response = await Collection.find({ [AttributeName]: Attribute });
     if (response.length)

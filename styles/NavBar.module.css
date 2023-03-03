@@ -1,0 +1,16 @@
+.navbar {
+  background-color: black;
+  display: flex;
+  padding: 15px;
+  justify-content: space-around;
+  text-decoration: none;
+  top: 0;
+  position: sticky;
+  width: 100%;
+}
+
+.navbarChild {
+  color: white;
+  margin-left: 10px;
+  font-size: larger;
+}
