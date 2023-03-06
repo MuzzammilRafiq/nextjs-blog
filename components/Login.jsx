@@ -1,8 +1,7 @@
 import axios from "axios";
 import Link from "next/link";
 import { useState } from "react";
-import Popup from "reactjs-popup";
-export default function Login(props) {
+export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const handleLogin = async (e) => {
