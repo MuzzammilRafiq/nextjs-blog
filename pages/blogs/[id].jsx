@@ -3,7 +3,7 @@ import connectDB from "@utils/connectDB";
 import { ParseSingleMongoDocument } from "@utils/ParseMongoDocument";
 import { useRouter } from "next/router";
 
-export default ({ data }) => {
+export default function Blogs({ data }) {
   return (
     <div>
       <h3>{data.title}</h3>
@@ -12,7 +12,7 @@ export default ({ data }) => {
       <p>{data.description}</p>
     </div>
   );
-};
+}
 
 export const getStaticPaths = async (context) => {
   return {
@@ -31,6 +31,7 @@ export const getStaticPaths = async (context) => {
     ],
   };
 };
+
 export const getStaticProps = async (context) => {
   await connectDB();
   const response = await Blog.findById(context.params.id);

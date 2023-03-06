@@ -4,7 +4,7 @@ import connectDB from "@utils/connectDB";
 import { ParseArrayMongoDocument } from "@utils/ParseMongoDocument";
 import Head from "next/head";
 
-export default (props) => {
+export default function IndexPage(props) {
   return (
     <div>
       <Head>
@@ -19,9 +19,10 @@ export default (props) => {
       )}
     </div>
   );
-};
+}
 
 export const getServerSideProps = async () => {
+  console.log(process.env.NODE_ENV);
   try {
     await connectDB();
     const response = await Blog.find();

@@ -2,7 +2,7 @@ import Blog from "@models/Blog";
 import connectDB from "@utils/connectDB";
 import { FETCH_BY_ATTRIBUTE, UPDATE_BY_ATTRIBUTE } from "@utils/CRUD";
 
-export default async (req, res, next) => {
+export default async function SingleBlog(req, res, next) {
   connectDB();
   if (req.method === "GET") {
     await FETCH_BY_ATTRIBUTE(req, res, next, {
@@ -21,4 +21,4 @@ export default async (req, res, next) => {
       data: req.body,
     });
   }
-};
+}

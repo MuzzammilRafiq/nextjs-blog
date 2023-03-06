@@ -2,7 +2,7 @@ import styles from "@styles/Add.module.css";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useState } from "react";
-export default function index() {
+export default function Index() {
   const [title, setTitle] = useState("");
   const [imgUrl, setImgUrl] = useState("");
   const [description, setDescription] = useState("");
