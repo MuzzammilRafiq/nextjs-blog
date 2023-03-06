@@ -3,7 +3,7 @@ import connectDB from "@utils/connectDB";
 import { CREATE, FETCH } from "@utils/CRUD";
 
 export default async function AllBlogs(req, res, next) {
-  connectDB();
+  await connectDB();
   if (req.method === "GET") {
     await FETCH(req, res, next, { Collection: Blog, Label: "Blog" });
   }
