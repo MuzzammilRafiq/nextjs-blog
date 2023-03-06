@@ -1,4 +1,5 @@
 import axios from "axios";
+import Link from "next/link";
 import { useState } from "react";
 export default function Register(props) {
   const [email, setEmail] = useState("");
@@ -73,13 +74,13 @@ export default function Register(props) {
                 Sign Up
               </button>
               <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                Already have an account{" "}
-                <a
+                Already have an account?{" "}
+                <Link
                   href="/auth/login"
                   className="font-medium text-primary-600 hover:underline dark:text-primary-500"
                 >
                   Sign in
-                </a>
+                </Link>
               </p>
             </form>
           </div>

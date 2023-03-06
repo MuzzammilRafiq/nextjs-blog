@@ -1,4 +1,5 @@
 import axios from "axios";
+import Link from "next/link";
 import { useState } from "react";
 import Popup from "reactjs-popup";
 export default function Login(props) {
@@ -85,13 +86,13 @@ export default function Login(props) {
                 Sign in
               </button>
               <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                Don't have an account yet?{" "}
-                <a
+                Don&apos;t have an account yet
+                <Link
                   href="/auth/register"
                   className="font-medium text-primary-600 hover:underline dark:text-primary-500"
                 >
                   Sign up
-                </a>
+                </Link>
               </p>
             </form>
           </div>
