@@ -12,13 +12,4 @@ const nextConfig = {
   },
 };
 
-module.exports = {
-  nextConfig,
-  webpack: (config) => {
-    config.resolve.alias["@models"] = require("path").join(
-      __dirname,
-      "/models"
-    );
-    return config;
-  },
-};
+module.exports = nextConfig;
