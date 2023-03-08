@@ -1,4 +1,3 @@
-import axios from "axios";
 import Link from "next/link";
 import { useState } from "react";
 export default function Register(props) {
@@ -6,22 +5,7 @@ export default function Register(props) {
   const [password, setPassword] = useState("");
   const handleLogin = async (e) => {
     e.preventDefault();
-    try {
-      const res = await axios.post("/api/auth/register", {
-        email,
-        password,
-      });
-      setEmail("");
-      setPassword("");
-      console.log(res);
-    } catch (error) {
-      if ((error.response.status = 409)) {
-        alert("Email already registered");
-      } else {
-        alert("Something went wrong");
-      }
-      console.log(error);
-    }
+    props.onRegister({ email, password });
   };
   return (
     <section className="bg-gray-50 dark:bg-gray-900">

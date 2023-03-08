@@ -16,6 +16,7 @@ export default async function login(req, res, next) {
       const token = jwt.sign({ email: user[0].email }, process.env.JWT_KEY, {
         expiresIn: "7d",
       });
+
       res.status(200).json(token);
     } catch (err) {
       console.log(err);

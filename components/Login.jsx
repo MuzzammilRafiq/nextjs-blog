@@ -1,30 +1,11 @@
-import axios from "axios";
 import Link from "next/link";
 import { useState } from "react";
-export default function Login() {
+export default function Login(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const handleLogin = async (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
-    try {
-      const res = await axios.post("/api/auth/login", {
-        email,
-        password,
-      });
-      setEmail("");
-      setPassword("");
-      localStorage.setItem("access_token", res.data);
-    } catch (error) {
-      const code = error.response.status;
-      if (code === 401) {
-        alert("email not registered");
-      } else if (code === 403) {
-        alert("username or password wrong");
-      } else {
-        alert("something went wrong");
-      }
-      console.log(error);
-    }
+    props.onLogin({ email, password });
   };
   return (
     <section className="bg-gray-50 dark:bg-gray-900">
@@ -85,7 +66,7 @@ export default function Login() {
                 Sign in
               </button>
               <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                Don&apos;t have an account yet
+                Don&apos;t have an account yet?{" "}
                 <Link
                   href="/auth/register"
                   className="font-medium text-primary-600 hover:underline dark:text-primary-500"

@@ -1,5 +1,3 @@
-function index() {
-  return <div className="text-red-500">Blogzamil</div>;
+export default function index() {
+  return <div>index</div>;
 }
-
-export default index;
