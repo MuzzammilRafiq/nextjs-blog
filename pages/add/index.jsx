@@ -3,7 +3,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import slugify from "slugify";
 
-function index() {
+export default function AddBlogPage() {
   const router = useRouter();
   const addBlog = async ({ title, imgUrl, description }) => {
     try {
@@ -20,5 +20,3 @@ function index() {
   };
   return <AddBlog addBlog={addBlog} />;
 }
-
-export default index;

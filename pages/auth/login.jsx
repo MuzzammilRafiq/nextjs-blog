@@ -4,7 +4,7 @@ import axios from "axios";
 import Cookies from "js-cookie";
 import { useRouter } from "next/router";
 
-export default function login(props) {
+export default function LoginPage(props) {
   const router = useRouter();
   const onLogin = async (data) => {
     try {

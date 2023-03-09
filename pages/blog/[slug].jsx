@@ -8,13 +8,13 @@ export default function SingleBlog(props) {
   return (
     <div className="max-w-fit m-auto mt-10">
       <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 ">
-        <img className="rounded-t-lg" src={props.data.imgUrl} alt="image" />
+        <img className="rounded-t-lg" src={props.data?.imgUrl} alt="image" />
         <div className="p-5">
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            {props.data.title}
+            {props.data?.title}
           </h5>
           <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-            {props.data.description}
+            {props.data?.description}
           </p>
         </div>
       </div>

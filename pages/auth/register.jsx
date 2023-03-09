@@ -1,7 +1,7 @@
 import Register from "@components/Register";
 import axios from "axios";
 
-function register() {
+export default function RegisterPage() {
   const onRegister = async (data) => {
     try {
       const res = await axios.post("/api/auth/register", data);
@@ -17,5 +17,3 @@ function register() {
   };
   return <Register onRegister={onRegister} />;
 }
-
-export default register;
