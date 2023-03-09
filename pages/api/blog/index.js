@@ -1,4 +1,4 @@
-import Blog from "@models/Blog";
+import Blog from "@schema/Blog";
 import connectDB from "@utils/connectDB";
 import { CREATE, FETCH } from "@utils/CRUD";
 

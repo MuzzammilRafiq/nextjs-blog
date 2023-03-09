@@ -1,4 +1,4 @@
-import User from "@models/User.js";
+import User from "@schema/User";
 import connectDB from "@utils/connectDB";
 import jwt from "jsonwebtoken";
 export default async function login(req, res, next) {

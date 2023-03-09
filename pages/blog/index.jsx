@@ -1,5 +1,5 @@
 import Card from "@components/Card";
-import Blog from "@models/Blog";
+import Blog from "@schema/Blog";
 import { ParseArrayMongoDocument } from "@utils/ParseMongoDocument";
 import connectDB from "@utils/connectDB";
 

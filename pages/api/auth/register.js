@@ -1,4 +1,4 @@
-import User from "@models/User.js";
+import User from "@schema/User";
 import connectDB from "@utils/connectDB";
 import { CREATE } from "@utils/CRUD";
 

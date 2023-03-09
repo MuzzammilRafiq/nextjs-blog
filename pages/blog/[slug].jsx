@@ -1,6 +1,6 @@
 import { ParseSingleMongoDocument } from "@utils/ParseMongoDocument";
 import connectDB from "@utils/connectDB";
-import Blog from "@models/Blog";
+import Blog from "@schema/Blog";
 import React from "react";
 
 export default function SingleBlog(props) {
