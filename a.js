@@ -2,7 +2,7 @@ var slugify = require("slugify");
 
 console.log(
   slugify(
-    "udyew dewjhdwe djhewd ewjhgdvew dhgwefd bewdjhgewfcvdb ewdtyewfd wednhgwefdw edhjgwedfwe dewdcyhewvd ewhddjhvewruydvwejhvdewyutdewqjhdn ehywutweh dhewgfcjh dgwceb dhtew ewdhewqfcd wdhfewqcweqj dwe".slice(
+    "udye dewjhdwe djhewd ewjhgdvew dhgwefd bewdjhgewfcvdb ewdtyewfd wednhgwefdw edhjgwedfwe dewdcyhewvd ewhddjhvewruydvwejhvdewyutdewqjhdn ehywutweh dhewgfcjh dgwceb dhtew ewdhewqfcd wdhfewqcweqj dwe".slice(
       0,
       61
     ),
