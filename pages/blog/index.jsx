@@ -19,6 +19,7 @@ export async function getStaticProps(context) {
         data: ParseArrayMongoDocument(response),
         error: false,
       },
+      revalidate: 2,
     };
   } catch (error) {
     console.log(error);
